@@ -1,0 +1,281 @@
+/*===== GOOGLE FONTS =====*/
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wdth@62.5..100&display=swap');
+
+/*===== VARIABLES CSS =====*/
+:root {
+    --header-height: 0rem;
+    --font-semi: 600;
+    /*===== Colores =====*/
+    /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
+    /* HSL color mode */
+    --hue-color: 224;
+    --blue-color-1: hsl(var(--hue-color), 89%, 60%);
+    --blue-color-2: hsl(var(--hue-color), 56%, 12%);
+    --black-color-1: rgba(1, 1, 1, 1);
+    --black-color-2: rgba(1, 1, 1, 0.369);
+    --white-color-1: rgba(255,255,255,1);
+    --white-color-2: rgba(255,255,255,0.04);
+
+    --bg-color: #0b0f14;        /* page background */
+    --secondary-bg-color: rgba(255,255,255,0.02); 
+    --text-color: #e6eef8;      /* main text */
+    --muted-color: rgba(230,238,248,0.65); /* muted text */
+   
+    /*===== Fonts =====*/
+    --body-font: "Noto Serif", serif;
+    --font-press-start-2p: 'Press Start 2P', sans-serif;
+
+    --big-font-size: 2rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: .938rem;
+    --smaller-font-size: .75rem;
+
+    /*===== Margenes =====*/
+    /* 1rem = root element font size (usually 16px by default). */
+    --mb-1: 1rem;
+    --mb-2: 1.5rem;
+    --mb-3: 2rem;
+    --mb-4: 2.5rem;
+    --mb-5: 3rem;
+    --mb-6: 4rem;
+
+    /*===== z index =====*/
+    --z-back: -10;
+    --z-fixed: 100;
+}
+
+/*===== BASE =====*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    /* font-size: var(--h2-font-size); */
+    color: var(--text-color);
+    line-height: 1.5;
+    /* font-family: 'Press Start 2P'; */
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0 0 0 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+.hide {
+  display: none;
+}
+
+h1, h2, p {
+  margin: 0;
+  color: var(--text-color);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*===== CLASS CSS ===== */
+.display-none {
+  display: none;  /* hides header only on pages with class ".display-none" */
+}
+
+.section {
+  padding-top: var(--mb-5);
+  /* padding-bottom: var(--mb-3); */
+  background: transparent;
+}
+
+.section-title {
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--text-color);
+  margin-bottom: var(--mb-3);
+  text-align: center;
+}
+
+.section-title::after {
+  position: absolute;
+  content: "";
+  width: 64px;
+  height: 0.18rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 2rem;
+  background-color: var(--second-color);
+}
+
+/* .section-title::after {
+  background-color: var(--muted-color);
+} */
+
+/*===== LAYOUT =====*/
+
+.l-main {
+  max-width: 800px;
+  padding: 0rem 5rem 1rem 5rem;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  margin-left: auto;
+  margin-right: auto;
+}  
+
+.l-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: rgba(10,14,20,0.9);
+  color: var(--text-color);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.6);
+}
+  
+/* ==== ACTIVE MENU ====*/
+
+.url-link {
+  text-decoration: none;
+  font-weight: bold; 
+}
+
+.url-link:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--text-color);
+}
+
+.active-link::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0.18rem;
+  left: 0;
+  top: 2rem;
+  background-color: var(--first-color);
+}
+
+/* ===== ABOUT =====*/
+
+.about__container {
+  text-align: center;
+}
+
+.about__title {
+  margin-bottom: 0;
+  padding-top: 1rem;
+  font-family: var(--font-press-start-2p);
+  font-size: var(--normal-font-size);
+  font-weight: 400;
+}
+
+.about__text {
+  margin: 2re;
+  padding: auto;
+  text-align: left;
+}
+
+/* ===== SKILLS =====*/
+
+.skills__container {
+  text-align: left;
+}
+
+.skills__subtitle {
+    font-size: var(--h2-font-size);
+}
+
+.skills__text {
+  padding: auto;
+}
+ 
+.skills__list {
+  list-style: none;
+  padding: 0;
+  margin: var(--mb-2) 0;
+  display: grid;
+  gap: 0.75rem;
+} 
+
+/* two-column layout on larger screens */
+  @media (min-width: 768px) {
+  .skills__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}  
+
+  .skills__item {
+  display: flex;
+  align-items: center; 
+  /* align-items: flex-start; */
+  gap: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--secondary-bg-color);  
+  /* border-left: 4px solid var(--blue-color-1); */
+  border-radius: 6px;
+  color: var(--muted-color);
+  font-size: var(--normal-font-size);
+  line-height: 1.4;
+}  
+
+
+.skills__item:hover {
+  background: var(--white-color-2);
+  color: var(--text-color);
+}   
+
+/* ===== CONTACT =====*/
+
+.contact__container {
+  top: 0;
+  left: 0;
+}
+
+.contact__subtitle {
+  font-size: var(--h2-font-size);
+}
+.contact__text {
+  padding: auto;
+}
+
+/* ===== FOOTER =====*/
+
+.footer {
+  text-align: center;
+  font-weight: var(--font-semi);
+  color: var(--muted-color);
+  background: transparent;
+  padding: var(--mb-1) 0;
+}
+ 
+.footer__copy {
+  font-size: var(--smaller-font-size);
+}
